@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,13 +44,14 @@ import java.util.concurrent.TimeUnit;
 
 public class UserActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_activity);
+
+        checkCurrentUser();
     }
+
     public void checkCurrentUser() {
         // [START check_current_user]
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -73,8 +75,16 @@ public class UserActivity extends AppCompatActivity {
             // authenticate with your backend server, if you have one. Use
             // FirebaseUser.getIdToken() instead.
             String uid = user.getUid();
+            TextView textViewToChange = (TextView) findViewById(R.id.emailView);
+            textViewToChange.setText(email);
         }
         // [END get_user_profile]
+    }
+
+    public void signOut(View view) {
+        // [START auth_sign_out]
+        FirebaseAuth.getInstance().signOut();
+        // [END auth_sign_out]
     }
 
 
