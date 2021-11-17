@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,13 +44,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class UserActivity extends AppCompatActivity {
-
+    private Button logoutButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_activity);
 
         checkCurrentUser();
+
+        logoutButton = (Button) findViewById(R.id.logout);
+
+        logoutButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(UserActivity.this, MainActivity.class));
+            }
+        });
+
     }
 
     public void checkCurrentUser() {
@@ -80,13 +92,5 @@ public class UserActivity extends AppCompatActivity {
         }
         // [END get_user_profile]
     }
-
-    public void signOut(View view) {
-        // [START auth_sign_out]
-        FirebaseAuth.getInstance().signOut();
-        // [END auth_sign_out]
-    }
-
-
 
 }
