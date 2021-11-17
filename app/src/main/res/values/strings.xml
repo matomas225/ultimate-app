@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">AndroidApp</string>
     <string name="login">Login</string>
+    <string name="postTitle">Title:</string>
+    <string name="arya">Arya</string>
+    <string name="description">Description:</string>
+    <string name="stark">Stark</string>
+    <string name="posts">Posts</string>
+    <string name="logout">Logout</string>
+    <string name="your_email">Your email:</string>
+    <string name="ultimate_app">Ultimate App</string>
 </resources>

@@ -76,6 +76,9 @@ public class UserActivity extends AppCompatActivity {
         }
         // [END check_current_user]
     }
+    public  void changeToList(View view){
+        startActivity(new Intent(this, ListActivity.class));
+    }
 
     public void getUserProfile() {
         // [START get_user_profile]
