@@ -33,8 +33,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
 
         PostActivity post = list.get(position);
-        holder.postTitle.setText(post.getPostTitle());
-        holder.postDescription.setText(post.getPostDescription());
+        holder.postTitle.setText(post.title);
+        holder.postDescription.setText(post.description);
 
     }
 
