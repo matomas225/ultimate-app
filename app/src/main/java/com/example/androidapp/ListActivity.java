@@ -49,10 +49,6 @@ public class ListActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    System.out.print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-                    Log.d("killer", "boyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
-                    Log.d("database" ,dataSnapshot.toString());
-                    System.out.print(dataSnapshot);
                     PostActivity postActivity = new PostActivity();
                     postActivity.title = dataSnapshot.child("title").getValue().toString();
                     postActivity.description = dataSnapshot.child("description").getValue().toString();

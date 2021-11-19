@@ -80,6 +80,10 @@ public class UserActivity extends AppCompatActivity {
         startActivity(new Intent(this, ListActivity.class));
     }
 
+    public  void changeToCreatePost(View view){
+        startActivity(new Intent(this, CreatePostActivity.class));
+    }
+
     public void getUserProfile() {
         // [START get_user_profile]
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
